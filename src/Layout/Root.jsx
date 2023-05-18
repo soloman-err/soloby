@@ -5,7 +5,7 @@ import Header from "../Shared/Header";
 
 const Root = () => {
   return (
-    <div>
+    <div className="container mx-auto flex flex-col justify-between h-screen">
       <Header />
       <Outlet></Outlet>
       <Footer />
