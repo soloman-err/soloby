@@ -2,6 +2,7 @@ import React from "react";
 import Carousel from "../../components/Carousel";
 import { useLoaderData } from "react-router-dom";
 import ToyCard from "../../components/ToyCard";
+import ShopTab from "./ShopTab";
 
 const Home = () => {
   const allToys = useLoaderData();
@@ -15,6 +16,10 @@ const Home = () => {
 
       {/* Shop items section*/}
       <section className="mt-20">
+        <h1 className="text-center font-bold text-3xl mb-5 uppercase">
+          'Play By Category
+        </h1>
+        <ShopTab></ShopTab>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {allToys.map((toy) => (
             <ToyCard key={toy._id} toy={toy}></ToyCard>
