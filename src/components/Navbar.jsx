@@ -26,7 +26,10 @@ const Navbar = () => {
       </ul>
 
       <div className="space-x-2">
-        <button className="btn">login</button>
+        <Link to="/login">
+          {" "}
+          <button className="btn">login</button>
+        </Link>
         <button className="btn">Register</button>
       </div>
     </nav>
