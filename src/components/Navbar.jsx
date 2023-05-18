@@ -27,10 +27,11 @@ const Navbar = () => {
 
       <div className="space-x-2">
         <Link to="/login">
-          {" "}
           <button className="btn">login</button>
         </Link>
-        <button className="btn">Register</button>
+        <Link to="/register">
+          <button className="btn">Register</button>
+        </Link>
       </div>
     </nav>
   );

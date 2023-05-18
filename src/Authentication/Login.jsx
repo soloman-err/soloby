@@ -3,7 +3,7 @@ import { Form, Link } from "react-router-dom";
 
 const Login = () => {
   return (
-    <div className="hero mt-20">
+    <div className="hero mt-10">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <Form className="card-body">
