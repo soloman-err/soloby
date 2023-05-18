@@ -27,7 +27,7 @@ const Navbar = () => {
 
       <div className="space-x-2">
         <button className="btn">login</button>
-        <button className="btn">logout</button>
+        <button className="btn">Register</button>
       </div>
     </nav>
   );
