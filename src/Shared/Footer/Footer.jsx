@@ -13,7 +13,7 @@ import PaymentPartners from "./PaymentPartners";
 
 const Footer = () => {
   return (
-    <footer className="pb-2 mt-5 px-10 bg-slate-900 text-white">
+    <footer className="pb-2 mt-10 px-10 bg-slate-900 text-white">
       {/* Top Layer */}
       <div className="bg-zinc-400 text-black font-bold pb-10 rounded-b-xl p-5">
         <div className="text-center w-[80%] mx-auto">

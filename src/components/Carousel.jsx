@@ -17,7 +17,7 @@ const Carousel = () => {
     <div className="bg-slate-50">
       <Swiper
         {...swipeCars}
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         modules={[Autoplay]}
       >
         <SwiperSlide>
