@@ -1,7 +1,19 @@
 import React from "react";
+import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
+import Rating from "react-rating";
+import { Link } from "react-router-dom";
 
 const TableRow = ({ toy }) => {
-  const { _id, photoURL, name, price, rating, desc } = toy;
+  const {
+    _id,
+    photoURL,
+    quantity,
+    name,
+    sellerName,
+    sellerEmail,
+    price,
+    rating,
+  } = toy;
   return (
     <tr>
       <td>
@@ -13,19 +25,33 @@ const TableRow = ({ toy }) => {
           </div>
           <div>
             <div className="font-bold">{name}</div>
-            <div className="text-sm opacity-50">United States</div>
+            <div className="text-sm opacity-80">United States</div>
           </div>
         </div>
       </td>
-      <td>Qan zee</td>
       <td>
-        ${price}
+        <span className="font-bold">{sellerName}</span>
         <br />
-        <span className="badge badge-ghost badge-sm">{rating}</span>
+        <span className="text-sm opacity-80">{sellerEmail}</span>
       </td>
-      <td>10</td>
+      <td>
+        <span className="font-bold">${price}</span>
+        <br />
+        {/* Rating */}
+        <Rating
+          className="text-warning text-xs"
+          readonly
+          placeholderRating={rating}
+          placeholderSymbol={<FaStar />}
+          emptySymbol={<FaRegStar />}
+          fullSymbol={<FaStarHalfAlt />}
+        />
+      </td>
+      <td>{quantity}</td>
       <th className="space-x-2">
-        <button className="btn btn-ghost btn-xs">View Details</button>
+        <Link to="/toyDetails">
+          <button className="btn btn-ghost btn-xs">View Details</button>
+        </Link>
       </th>
     </tr>
   );

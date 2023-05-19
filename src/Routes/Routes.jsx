@@ -10,6 +10,7 @@ import Register from "../Authentication/Register";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Error from "../Layout/Error";
 import PrivateRoute from "./PrivateRoute";
+import ToyDetails from "../Pages/AllToys/ToyDetails";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,14 @@ const router = createBrowserRouter([
       {
         path: "allToys",
         element: <AllToys></AllToys>,
+      },
+      {
+        path: "toyDetails",
+        element: (
+          <PrivateRoute>
+            <ToyDetails></ToyDetails>
+          </PrivateRoute>
+        ),
       },
       {
         path: "myToys",

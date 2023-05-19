@@ -26,7 +26,7 @@ const ToyTable = () => {
             <tr>
               <th>Name</th>
               <th>Seller</th>
-              <th>Price</th>
+              <th>Price & Rating</th>
               <th>Available Quantity</th>
               <th>Status</th>
             </tr>
