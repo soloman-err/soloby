@@ -9,6 +9,7 @@ import Login from "../Authentication/Login";
 import Register from "../Authentication/Register";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Error from "../Layout/Error";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,11 @@ const router = createBrowserRouter([
       },
       {
         path: "addAToy",
-        element: <AddAToy></AddAToy>,
+        element: (
+          <PrivateRoute>
+            <AddAToy></AddAToy>
+          </PrivateRoute>
+        ),
       },
       {
         path: "blog",

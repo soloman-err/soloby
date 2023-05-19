@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "../../components/Navbar";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Header = () => {
   return (
