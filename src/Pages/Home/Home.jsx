@@ -6,6 +6,7 @@ import ShopTab from "./ShopTab";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import AosGallery from "./AosGallery";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 const Home = () => {
   const allToys = useLoaderData();
@@ -24,8 +25,18 @@ const Home = () => {
 
       {/* AOS Gallery */}
       <section className="relative my-20 lg:my-40 space-y-10">
-        <h1 className="font-bold underline z-100 -rotate-3 text-3xl md:text-5xl lg:text-8xl italic uppercase text-center">
-          The Art of Motion
+        <h1
+          style={{ fontFamily: "Audiowide" }}
+          className="font-bold underline z-100 -rotate-3 text-3xl md:text-5xl lg:text-8xl italic uppercase text-center"
+        >
+          Wheel of Motion
+          <Player
+            loop
+            autoplay
+            speed={-2}
+            className="w-40 animate-spin"
+            src={"https://assets2.lottiefiles.com/packages/lf20_kecmw5x9.json"}
+          />
         </h1>
         <AosGallery />
       </section>

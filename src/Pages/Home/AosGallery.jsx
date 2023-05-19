@@ -12,7 +12,7 @@ const AosGallery = () => {
             src="https://m.media-amazon.com/images/I/61RBdjNlWWL._SL1500_.jpg"
             alt="shelby-car-image"
           />
-          <h1 data-aos="fade-right" className="font-bold text-5xl">
+          <h1 data-aos="fade-right" className="custom-title font-bold text-5xl">
             GRAND THEFT
           </h1>
         </div>
@@ -26,7 +26,10 @@ const AosGallery = () => {
             src="https://m.media-amazon.com/images/I/61RBdjNlWWL._SL1500_.jpg"
             alt="shelby-car-image"
           />
-          <h1 data-aos="fade-left" className="font-bold text-end text-5xl">
+          <h1
+            data-aos="fade-left"
+            className="custom-title font-bold text-end text-5xl"
+          >
             GRAND THEFT
           </h1>
         </div>
@@ -40,7 +43,7 @@ const AosGallery = () => {
             src="https://m.media-amazon.com/images/I/61RBdjNlWWL._SL1500_.jpg"
             alt="shelby-car-image"
           />
-          <h1 data-aos="fade-right" className="font-bold text-5xl">
+          <h1 data-aos="fade-right" className="custom-title font-bold text-5xl">
             GRAND THEFT
           </h1>
         </div>
@@ -54,7 +57,10 @@ const AosGallery = () => {
             src="https://m.media-amazon.com/images/I/61RBdjNlWWL._SL1500_.jpg"
             alt="shelby-car-image"
           />
-          <h1 data-aos="fade-left" className="font-bold text-end text-5xl">
+          <h1
+            data-aos="fade-left"
+            className="custom-title font-bold text-end text-5xl"
+          >
             GRAND THEFT
           </h1>
         </div>
@@ -68,7 +74,7 @@ const AosGallery = () => {
             src="https://m.media-amazon.com/images/I/61RBdjNlWWL._SL1500_.jpg"
             alt="shelby-car-image"
           />
-          <h1 data-aos="fade-right" className="font-bold text-5xl">
+          <h1 data-aos="fade-right" className="custom-title font-bold text-5xl">
             GRAND THEFT
           </h1>
         </div>
@@ -82,7 +88,10 @@ const AosGallery = () => {
             src="https://m.media-amazon.com/images/I/61RBdjNlWWL._SL1500_.jpg"
             alt="shelby-car-image"
           />
-          <h1 data-aos="fade-left" className="font-bold text-end text-5xl">
+          <h1
+            data-aos="fade-left"
+            className="custom-title font-bold text-end text-5xl"
+          >
             GRAND THEFT
           </h1>
         </div>
@@ -96,7 +105,7 @@ const AosGallery = () => {
             src="https://m.media-amazon.com/images/I/61RBdjNlWWL._SL1500_.jpg"
             alt="shelby-car-image"
           />
-          <h1 data-aos="fade-right" className="font-bold text-5xl">
+          <h1 data-aos="fade-right" className="custom-title font-bold text-5xl">
             GRAND THEFT
           </h1>
         </div>

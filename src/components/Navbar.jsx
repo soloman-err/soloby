@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className="flex justify-between items-center py-2">
       <Link to="/">
-        <h1 className="text-3xl font-bold">soloby</h1>
+        <h1 className="custom-title text-3xl font-bold">soloby</h1>
       </Link>
       <ul
         id="navul"
