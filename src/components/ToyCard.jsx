@@ -1,11 +1,11 @@
 import React from "react";
 
 const ToyCard = ({ toy }) => {
-  const { name, desc, img, price, rating } = toy;
+  const { name, desc, photoURL, price, rating } = toy;
   return (
     <div className="card card-compact bg-base-100 shadow-xl">
       <figure>
-        <img src={img} alt="Shoes" />
+        <img src={photoURL} alt="Shoes" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
