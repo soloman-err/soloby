@@ -4,7 +4,7 @@ import "react-tabs/style/react-tabs.css";
 
 const ShopTab = () => {
   return (
-    <div>
+    <div className="text-center">
       <Tabs forceRenderTabPanel defaultIndex={1}>
         <TabList>
           <Tab>Muscle car</Tab>
@@ -23,6 +23,7 @@ const ShopTab = () => {
             </TabList>
             <TabPanel>1</TabPanel>
             <TabPanel>2</TabPanel>
+            <TabPanel>3</TabPanel>
           </Tabs>
         </TabPanel>
 
@@ -34,6 +35,9 @@ const ShopTab = () => {
               <Tab>Hot Hatches</Tab>
               <Tab>Exotic</Tab>
             </TabList>
+            <TabPanel>1</TabPanel>
+            <TabPanel>2</TabPanel>
+            <TabPanel>3</TabPanel>
           </Tabs>
         </TabPanel>
 
@@ -45,6 +49,9 @@ const ShopTab = () => {
               <Tab>SUV-Based Trucks</Tab>
               <Tab>Compact Trucks</Tab>
             </TabList>
+            <TabPanel>1</TabPanel>
+            <TabPanel>2</TabPanel>
+            <TabPanel>3</TabPanel>
           </Tabs>
         </TabPanel>
 
@@ -56,6 +63,9 @@ const ShopTab = () => {
               <Tab>Crossovers</Tab>
               <Tab>Microcars</Tab>
             </TabList>
+            <TabPanel>1</TabPanel>
+            <TabPanel>2</TabPanel>
+            <TabPanel>3</TabPanel>
           </Tabs>
         </TabPanel>
       </Tabs>

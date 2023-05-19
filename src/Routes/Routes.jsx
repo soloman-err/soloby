@@ -7,6 +7,8 @@ import AddAToy from "../Pages/AddAToy/AddAToy";
 import Blog from "../Pages/Blog/Blog";
 import Login from "../Authentication/Login";
 import Register from "../Authentication/Register";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import Error from "../Layout/Error";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,16 @@ const router = createBrowserRouter([
       {
         path: "register",
         element: <Register></Register>,
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <Error></Error>,
+    children: [
+      {
+        path: "*",
+        element: <ErrorPage></ErrorPage>,
       },
     ],
   },
