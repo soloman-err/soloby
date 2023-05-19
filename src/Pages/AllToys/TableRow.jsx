@@ -8,7 +8,7 @@ const TableRow = ({ toy }) => {
     _id,
     photoURL,
     quantity,
-    name,
+    productsTitle,
     sellerName,
     sellerEmail,
     price,
@@ -25,7 +25,7 @@ const TableRow = ({ toy }) => {
             </div>
           </div>
           <div>
-            <div className="font-bold">{name}</div>
+            <div className="font-bold">{productsTitle}</div>
             <small className="text-sm opacity-80">{subCategory}</small>
           </div>
         </div>
@@ -50,7 +50,7 @@ const TableRow = ({ toy }) => {
       </td>
       <td>{quantity}</td>
       <th className="space-x-2">
-        <Link to="/toyDetails">
+        <Link to={`/toyDetails/${_id}`}>
           <button className="btn btn-ghost btn-xs">View Details</button>
         </Link>
       </th>

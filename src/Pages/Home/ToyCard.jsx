@@ -3,14 +3,15 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 
 const ToyCard = ({ toy }) => {
-  const { name, desc, photoURL, price, rating } = toy;
+  const { _id, productsTitle, desc, photoURL, price, rating } = toy;
+  // console.log(_id);
   return (
     <div className="card card-compact bg-base-100 shadow-xl">
       <figure>
         <img src={photoURL} alt="Shoes" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{name}</h2>
+        <h2 className="card-title">{productsTitle}</h2>
         <p>{desc}</p>
         <div className="flex items-center">
           <p className="font-bold text-lg">${price}</p>

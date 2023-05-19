@@ -10,7 +10,7 @@ import { Player } from "@lottiefiles/react-lottie-player";
 
 const Home = () => {
   const allToys = useLoaderData();
-  // console.log(allToys);
+  console.log(allToys);
 
   Aos.init({
     duration: 200,
