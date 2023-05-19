@@ -6,7 +6,8 @@ import ShopTab from "./ShopTab";
 
 const Home = () => {
   const allToys = useLoaderData();
-  console.log(allToys);
+  // console.log(allToys);
+
   return (
     <div className="">
       {/* Banner */}

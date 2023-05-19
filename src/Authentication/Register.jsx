@@ -6,17 +6,23 @@ const Register = () => {
   const { createUser } = useContext(AuthContext);
   // console.log(createUser);
 
-  const handleCreateUser = (event) => {
+  const handleCreateUser = async (event) => {
     event.preventDefault();
     const form = event.target;
     const username = form.username.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(username, email, password);
+    const photoUrl = form.photoUrl.value;
+    console.log(username, email, password, photoUrl);
 
-    createUser(username, email, password)
-      .then((result) => console.log(result))
-      .then((error) => console.log(error));
+    try {
+      await createUser(email, password).then((result) => {
+        const user = result.user;
+        console.log(user);
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <div className="hero mt-10">
@@ -33,6 +39,7 @@ const Register = () => {
                 name="username"
                 placeholder="username"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -40,10 +47,11 @@ const Register = () => {
                 <span className="label-text">Email</span>
               </label>
               <input
-                type="text"
+                type="email"
                 name="email"
                 placeholder="email"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -55,6 +63,7 @@ const Register = () => {
                 name="password"
                 placeholder="password"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -66,10 +75,11 @@ const Register = () => {
                 name="photoUrl"
                 placeholder="https://profile-image.jpg"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-warning">Login</button>
+              <button className="btn btn-warning">Register</button>
             </div>
             <small>
               Already have an account? <Link to="/login">Login</Link>

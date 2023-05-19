@@ -1,6 +1,6 @@
-import { Controls, Player } from "@lottiefiles/react-lottie-player";
+import { Player } from "@lottiefiles/react-lottie-player";
 import React from "react";
-import { FaArrowLeft, FaLongArrowAltLeft } from "react-icons/fa";
+import { FaLongArrowAltLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
