@@ -1,4 +1,6 @@
 import React from "react";
+import { FaRegStar, FaStar } from "react-icons/fa";
+import Rating from "react-rating";
 
 const ToyCard = ({ toy }) => {
   const { name, desc, photoURL, price, rating } = toy;
@@ -10,9 +12,19 @@ const ToyCard = ({ toy }) => {
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
         <p>{desc}</p>
-        <p className="font-bold">${price}</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">View Details</button>
+        <div className="flex items-center">
+          <p className="font-bold text-lg">${price}</p>
+          <Rating
+            className="text-sm"
+            readonly
+            fullSymbol={<FaStar />}
+            placeholderRating={rating}
+            emptySymbol={<FaRegStar />}
+            placeholderSymbol={<FaStar />}
+          />
+        </div>
+        <div className="card-actions">
+          <button className="w-full btn btn-primary">View Details</button>
         </div>
       </div>
     </div>

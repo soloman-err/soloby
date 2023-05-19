@@ -72,7 +72,7 @@ const AuthProvider = ({ children }) => {
       confirmButtonText: "Confirm!",
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire("Logged out!", "Your file has been deleted.", "success");
+        Swal.fire("Logged out!", "Join us again soon.", "success");
         return signOut(auth);
       }
     });

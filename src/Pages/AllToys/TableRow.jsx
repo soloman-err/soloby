@@ -13,6 +13,7 @@ const TableRow = ({ toy }) => {
     sellerEmail,
     price,
     rating,
+    subCategory,
   } = toy;
   return (
     <tr>
@@ -25,7 +26,7 @@ const TableRow = ({ toy }) => {
           </div>
           <div>
             <div className="font-bold">{name}</div>
-            <div className="text-sm opacity-80">United States</div>
+            <small className="text-sm opacity-80">{subCategory}</small>
           </div>
         </div>
       </td>
@@ -35,16 +36,16 @@ const TableRow = ({ toy }) => {
         <span className="text-sm opacity-80">{sellerEmail}</span>
       </td>
       <td>
-        <span className="font-bold">${price}</span>
+        <span className="font-bold text-warning">${price}</span>
         <br />
         {/* Rating */}
         <Rating
-          className="text-warning text-xs"
+          className="text-xs"
           readonly
+          fullSymbol={<FaStar />}
           placeholderRating={rating}
-          placeholderSymbol={<FaStar />}
           emptySymbol={<FaRegStar />}
-          fullSymbol={<FaStarHalfAlt />}
+          placeholderSymbol={<FaStar />}
         />
       </td>
       <td>{quantity}</td>
