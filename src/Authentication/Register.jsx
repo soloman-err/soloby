@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Form, Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Register = () => {
+  const [error, setError] = useState("");
   const { createUser } = useContext(AuthContext);
   // console.log(createUser);
 
@@ -12,7 +13,7 @@ const Register = () => {
     const username = form.username.value;
     const email = form.email.value;
     const password = form.password.value;
-    const photoUrl = form.photoUrl.value;
+    const photoUrl = form.photoURL.value;
     console.log(username, email, password, photoUrl);
 
     try {
@@ -22,6 +23,7 @@ const Register = () => {
       });
     } catch (err) {
       console.log(err);
+      setError(err.message);
     }
   };
   return (
@@ -72,12 +74,18 @@ const Register = () => {
               </label>
               <input
                 type="text"
-                name="photoUrl"
+                name="photoURL"
                 placeholder="https://profile-image.jpg"
                 className="input input-bordered"
                 required
               />
             </div>
+
+            {/* Error display */}
+            <div>
+              {error && <p className="text-red-500 text-sm">{error}</p>}
+            </div>
+
             <div className="form-control mt-6">
               <button className="btn btn-warning">Register</button>
             </div>

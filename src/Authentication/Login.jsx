@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Login = () => {
+  const [error, setError] = useState("");
   const { googleSignIn, githubSignIn, emailPassSignIn } =
     useContext(AuthContext);
   const location = useLocation();
@@ -25,10 +26,15 @@ const Login = () => {
         console.log(user);
         form.reset();
         navigate(from);
-        Swal.fire("Good job!", "You clicked the button!", "success");
+        Swal.fire(
+          "Permission Granted!",
+          "You logged in successfully!",
+          "success"
+        );
       })
       .catch((err) => {
         console.log(err);
+        setError(err.message);
       });
   };
 
@@ -43,6 +49,7 @@ const Login = () => {
       });
     } catch (err) {
       console.log(err);
+      setError(err.message);
     }
   };
 
@@ -57,6 +64,7 @@ const Login = () => {
       });
     } catch (err) {
       console.log(err);
+      setError(err.message);
     }
   };
 
@@ -95,6 +103,12 @@ const Login = () => {
                 </a>
               </label>
             </div>
+
+            {/* Error display */}
+            <div>
+              {error && <p className="text-red-500 text-sm">{error}</p>}
+            </div>
+
             <div className="form-control mt-6">
               <button onClick={emailPassSignIn} className="btn btn-primary">
                 Login
