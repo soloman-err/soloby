@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import ToyTable from "./ToyTable";
 
 const AllToys = () => {
-  return <></>;
+  return (
+    <>
+      <ToyTable />
+    </>
+  );
 };
 
 export default AllToys;
