@@ -10,6 +10,7 @@ import {
   signOut,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
+import Swal from "sweetalert2";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
@@ -61,7 +62,20 @@ const AuthProvider = ({ children }) => {
   // User exit:
   const logOut = () => {
     setLoading(true);
-    return signOut(auth);
+    Swal.fire({
+      title: "Wanna leave?",
+      text: "You'll be logged out",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Logged out!", "Your file has been deleted.", "success");
+        return signOut(auth);
+      }
+    });
   };
 
   // Exportable auth info:

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const { googleSignIn, githubSignIn, emailPassSignIn } =
@@ -24,6 +25,7 @@ const Login = () => {
         console.log(user);
         form.reset();
         navigate(from);
+        Swal.fire("Good job!", "You clicked the button!", "success");
       })
       .catch((err) => {
         console.log(err);
@@ -37,6 +39,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         navigate(from);
+        Swal.fire("Permission Granted!", "You can explore more!", "success");
       });
     } catch (err) {
       console.log(err);
@@ -50,6 +53,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         navigate(from);
+        Swal.fire("Permission Granted!", "You clicked the button!", "success");
       });
     } catch (err) {
       console.log(err);
