@@ -15,6 +15,8 @@ const TableRow = ({ toy }) => {
     rating,
     subCategory,
   } = toy;
+
+  // console.log(_id);
   return (
     <tr>
       <td>

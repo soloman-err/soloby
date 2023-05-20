@@ -24,7 +24,7 @@ const AddAToy = () => {
       quantity,
     };
 
-    fetch("http://localhost:2000/addAToy", {
+    fetch("    http://localhost:2000/addAToy", {
       method: "POST",
       headers: {
         "content-type": "application/json",

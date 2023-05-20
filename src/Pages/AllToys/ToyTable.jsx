@@ -3,7 +3,6 @@ import TableRow from "./TableRow";
 
 const ToyTable = () => {
   const [allToys, setAllToys] = useState([]);
-  console.log(allToys);
 
   useEffect(() => {
     try {
