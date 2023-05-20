@@ -12,6 +12,7 @@ const AddAToy = () => {
     const rating = form.rating.value;
     const subCategory = form.subCategory.value;
     const quantity = form.quantity.value;
+    const desc = form.desc.value;
 
     const newToy = {
       photoURL,
@@ -22,6 +23,7 @@ const AddAToy = () => {
       rating,
       subCategory,
       quantity,
+      desc,
     };
 
     fetch("    http://localhost:2000/addAToy", {
@@ -36,6 +38,7 @@ const AddAToy = () => {
         console.log(data);
         if (data.insertedId) {
           alert("Toy added successfully");
+          form.reset();
         }
       });
   };
@@ -134,9 +137,12 @@ const AddAToy = () => {
           </div>
 
           {/* Row 3 */}
-          <div className="flex justify-between">
+          <div
+            className="flex flex-col-reverse
+           md:flex-row justify-between"
+          >
             {/* Sub-category */}
-            <div className="w-[48%]">
+            <div className="md:w-[48%]">
               <label className="label">
                 <span className="label-text">Sub-category</span>
               </label>
@@ -176,6 +182,21 @@ const AddAToy = () => {
               />
             </div>
           </div>
+
+          {/* Row 4 */}
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Description</span>
+            </label>
+            <textarea
+              type="text"
+              name="desc"
+              className="input input-bordered py-1"
+              placeholder="Write Description"
+              required
+            ></textarea>
+          </div>
+
           <div className="form-control mt-6">
             <button className="btn btn-primary">Publish</button>
           </div>
