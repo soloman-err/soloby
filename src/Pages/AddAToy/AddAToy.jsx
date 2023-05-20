@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { FaLine, FaMinus, FaRulerHorizontal } from "react-icons/fa";
 
 const AddAToy = () => {
+  const { user } = useContext(AuthContext);
+  // console.log(user);
+
   const handleAddToy = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -50,7 +55,13 @@ const AddAToy = () => {
           onSubmit={handleAddToy}
           className="w-full card-body rounded shadow-xl"
         >
-          <div className="flex flex-col md:flex-row gap-5">
+          <div className="flex justify-center items-baseline">
+            <span className="text-2xl animate-pulse"> _</span>
+            <h1 className="text-center font-bold text-3xl underline-offset-4">
+              Add your product
+            </h1>
+          </div>
+          <div className="flex flex-col md:flex-row gap-5 mt-10">
             {/* Row 1 */}
             <div className="">
               {/* Picture URL */}
@@ -104,6 +115,7 @@ const AddAToy = () => {
                 <input
                   type="text"
                   name="name"
+                  defaultValue={user?.displayName}
                   placeholder="Seller name"
                   className="input input-bordered"
                   required
@@ -116,6 +128,7 @@ const AddAToy = () => {
                 <input
                   type="email"
                   name="email"
+                  defaultValue={user?.email}
                   placeholder="Seller email"
                   className="input input-bordered"
                   required
@@ -135,7 +148,6 @@ const AddAToy = () => {
               </div>
             </div>
           </div>
-
           {/* Row 3 */}
           <div
             className="flex flex-col-reverse
@@ -182,7 +194,6 @@ const AddAToy = () => {
               />
             </div>
           </div>
-
           {/* Row 4 */}
           <div className="form-control">
             <label className="label">
@@ -196,7 +207,6 @@ const AddAToy = () => {
               required
             ></textarea>
           </div>
-
           <div className="form-control mt-6">
             <button className="btn btn-primary">Publish</button>
           </div>

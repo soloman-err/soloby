@@ -1,6 +1,5 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import { useLoaderData } from "react-router-dom";
-import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Rating from "react-rating";
 import { FaRegStar, FaStar } from "react-icons/fa";
 
