@@ -3,7 +3,7 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
 
-const TableRow = ({ toy }) => {
+const MyToyRow = ({ toy }) => {
   const {
     _id,
     photoURL,
@@ -31,11 +31,7 @@ const TableRow = ({ toy }) => {
           </div>
         </div>
       </td>
-      <td>
-        <span className="font-bold">{name}</span>
-        <br />
-        <span className="text-sm opacity-80">{email}</span>
-      </td>
+
       <td>
         <span className="font-bold text-warning">${price}</span>
         <br />
@@ -51,12 +47,11 @@ const TableRow = ({ toy }) => {
       </td>
       <td>{quantity}</td>
       <th className="space-x-2">
-        <Link to={`/toyDetails/${_id}`}>
-          <button className="btn btn-sm">View Details</button>
-        </Link>
+        <button className="btn btn-sm btn-info">Update</button>
+        <button className="btn btn-sm btn-error">Delete</button>
       </th>
     </tr>
   );
 };
 
-export default TableRow;
+export default MyToyRow;

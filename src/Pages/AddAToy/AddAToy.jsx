@@ -7,8 +7,8 @@ const AddAToy = () => {
     const photoURL = form.photoURL.value;
     const productsTitle = form.productsTitle.value;
     const price = form.price.value;
-    const sellerName = form.sellerName.value;
-    const sellerEmail = form.sellerEmail.value;
+    const name = form.name.value;
+    const email = form.email.value;
     const rating = form.rating.value;
     const subCategory = form.subCategory.value;
     const quantity = form.quantity.value;
@@ -18,8 +18,8 @@ const AddAToy = () => {
       photoURL,
       productsTitle,
       price,
-      sellerName,
-      sellerEmail,
+      name,
+      email,
       rating,
       subCategory,
       quantity,
@@ -103,7 +103,7 @@ const AddAToy = () => {
                 </label>
                 <input
                   type="text"
-                  name="sellerName"
+                  name="name"
                   placeholder="Seller name"
                   className="input input-bordered"
                   required
@@ -111,12 +111,12 @@ const AddAToy = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Seller e-mail</span>
+                  <span className="label-text">Seller email</span>
                 </label>
                 <input
                   type="email"
-                  name="sellerEmail"
-                  placeholder="Seller e-mail"
+                  name="email"
+                  placeholder="Seller email"
                   className="input input-bordered"
                   required
                 />

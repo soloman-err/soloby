@@ -11,8 +11,8 @@ const ToyDetails = () => {
     photoURL,
     productsTitle,
     quantity,
-    sellerName,
-    sellerEmail,
+    name,
+    email,
     price,
     rating,
     subCategory,
@@ -20,12 +20,17 @@ const ToyDetails = () => {
   } = toy;
 
   return (
-    <div className="card md:card-side w-[70%] mx-auto bg-base-100 shadow-xl">
+    <div className="flex flex-col md:flex-row h-80 rounded-xl w-[70%] mx-auto bg-base-100 shadow-xl">
       <figure>
-        <img className="w-80 lg:w-[500px]" src={photoURL} alt="Movie" />
+        <img
+          className="h-full w-96 object-cover rounded-xl shadow-xl"
+          src={photoURL}
+          alt="Movie"
+        />
       </figure>
       <div className="card-body">
         <h2 className="card-title text-3xl">{productsTitle}</h2>
+        <hr />
         <div className="">
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:items-end justify-between">
             <div>
@@ -50,18 +55,22 @@ const ToyDetails = () => {
               </small>
             </div>
           </div>
-          <div>
+
+          <div className="mt-2">
+            <p className="text-sm font-bold underline">Suppliers Info:</p>
             <small>
-              <span className="font-bold">Seller:</span> {sellerName}
+              <span className="font-bold">Seller:</span> {name}
             </small>
             <br />
             <small>
-              <span className="font-bold">Email:</span> {sellerEmail}
+              <span className="font-bold">Email:</span> {email}
             </small>
           </div>
         </div>
+        <hr />
+        <div className="text-sm mt-2">
+          <p className="text-sm font-bold underline">Product Description:</p>
 
-        <div className="border-t text-sm mt-2">
           <p className="opacity-95">{desc}</p>
         </div>
       </div>

@@ -1,20 +1,14 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { FaBars, FaCross, FaHamburger } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
-  // const [isActive, setIsActive] = useState("");
 
   const location = useLocation();
-  console.log(location);
-
-  // const handleActiveState = (state) => {
-  //   setIsActive(state);
-  // };
 
   // Navbar toggle:
   const toggleNav = () => {
@@ -31,10 +25,7 @@ const Navbar = () => {
       <Link to="/">
         <h1 className="custom-title text-3xl font-bold">soloby</h1>
       </Link>
-      <ul
-        id="navul"
-        className="hidden md:flex flex-col md:flex-row font-bold md:space-x-10 uppercase divide-black"
-      >
+      <ul className="hidden md:flex flex-col md:flex-row font-bold md:space-x-10 uppercase divide-black">
         <li
           className={
             location.pathname === "/allToys"
@@ -82,10 +73,7 @@ const Navbar = () => {
         <aside
           className={`bg-gray-200 fixed top-12 p-2 left-0 h-full w-56 transition-transform duration-500 ease-in-out z-50 flex`}
         >
-          <ul
-            id="navul"
-            className="flex flex-col font-bold md:space-x-0 space-y-1 uppercase"
-          >
+          <ul className="flex flex-col font-bold md:space-x-0 space-y-1 uppercase">
             <li>
               <a href="/allToys">All Toys</a>
             </li>
