@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { FaBars, FaCross, FaHamburger } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
@@ -7,6 +7,14 @@ import { ImCross } from "react-icons/im";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
+  // const [isActive, setIsActive] = useState("");
+
+  const location = useLocation();
+  console.log(location);
+
+  // const handleActiveState = (state) => {
+  //   setIsActive(state);
+  // };
 
   // Navbar toggle:
   const toggleNav = () => {
@@ -25,22 +33,44 @@ const Navbar = () => {
       </Link>
       <ul
         id="navul"
-        className="hidden md:flex flex-col md:flex-row font-bold md:space-x-2 uppercase divide-black"
+        className="hidden md:flex flex-col md:flex-row font-bold md:space-x-10 uppercase divide-black"
       >
-        <li>
+        <li
+          className={
+            location.pathname === "/allToys"
+              ? "underline underline-offset-4"
+              : ""
+          }
+        >
           <a href="/allToys">All Toys</a>
         </li>
         {user && (
           <>
-            <li>
+            <li
+              className={
+                location.pathname === "/myToys"
+                  ? "underline underline-offset-4"
+                  : ""
+              }
+            >
               <a href="/myToys">My Toys</a>
             </li>
-            <li>
+            <li
+              className={
+                location.pathname === "/addAToy"
+                  ? "underline underline-offset-4"
+                  : ""
+              }
+            >
               <a href="/addAToy">Add a Toy</a>
             </li>
           </>
         )}
-        <li>
+        <li
+          className={
+            location.pathname === "/blog" ? "underline underline-offset-4" : ""
+          }
+        >
           <a href="/blog">Blog</a>
         </li>
       </ul>
