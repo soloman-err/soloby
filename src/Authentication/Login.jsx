@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -119,11 +120,17 @@ const Login = () => {
             </small>
           </form>
           <div className="flex justify-center gap-2">
-            <button onClick={handleGoogleSignIn} className="btn btn-outline">
-              Google
+            <button
+              onClick={handleGoogleSignIn}
+              className="btn btn-outline text-xl"
+            >
+              <FaGoogle />
             </button>
-            <button onClick={handleGithubSignIn} className="btn">
-              GitHub
+            <button
+              onClick={handleGithubSignIn}
+              className="btn btn-outline text-xl"
+            >
+              <FaGithub />
             </button>
           </div>
         </div>

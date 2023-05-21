@@ -21,7 +21,7 @@ const MyToys = () => {
   // const handleUpdateToy = (id) => {
   //   console.log(id);
   //   fetch(`https://soloby.vercel.app/toyDetails/${id}`, {
-  //     method: "PATCH",
+  //     method: "PUT",
   //     header: {
   //       "content-type": "application/json",
   //     },
@@ -84,6 +84,7 @@ const MyToys = () => {
                   key={toy._id}
                   toy={toy}
                   handleDeleteToy={handleDeleteToy}
+                  // handleUpdateToy={handleUpdateToy}
                 />
               ))}
             </tbody>

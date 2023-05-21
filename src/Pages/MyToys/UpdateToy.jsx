@@ -46,29 +46,32 @@ const UpdateToy = () => {
       desc,
       _id,
     };
-    console.log(id);
 
     Swal.fire({
-      title: "Are you sure to update?",
+      title: "Are you sure you want to update?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, Update it!",
+      confirmButtonText: "Yes, update it!",
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(`https://soloby.vercel.app/toyDetails/${_id}`, {
           method: "PUT",
-          header: {
-            "content-type": "application/json",
+          headers: {
+            "Content-Type": "application/json",
           },
           body: JSON.stringify(updatedToy),
         })
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
+            Swal.fire("Updated!", "You have updated successfully!", "success");
+          })
+          .catch((error) => {
+            console.log(error);
+            Swal.fire("Error!", "An error occurred while updating.", "error");
           });
-        Swal.fire("Updated!", "You'vé updated successfully!", "success");
       }
     });
   };

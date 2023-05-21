@@ -3,23 +3,7 @@ import { FaEdit, FaRegStar, FaStar, FaTrashAlt } from "react-icons/fa";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
 
-const MyToyRow = ({
-  toy,
-  handleDeleteToy,
-  handleUpdateToy,
-  // openModal,
-  // closeModal,
-}) => {
-  // const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // const openModal = () => {
-  //   console.log("modal opened");
-  //   setIsModalOpen(true);
-  // };
-  // const closeModal = () => {
-  //   setIsModalOpen(false);
-  // };
-
+const MyToyRow = ({ toy, handleDeleteToy, handleUpdateToy }) => {
   const {
     _id,
     photoURL,
@@ -34,15 +18,6 @@ const MyToyRow = ({
 
   return (
     <>
-      {/* {isModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <form>
-              <input type="text" />
-            </form>
-          </div>
-        </div>
-      )} */}
       <tr>
         <td>
           <div className="flex items-center space-x-3">
@@ -75,7 +50,7 @@ const MyToyRow = ({
         <th className="md:space-x-2 flex flex-col md:flex-row">
           <Link to={`/updateToy/${_id}`}>
             <button
-              onClick={() => handleUpdateToy(_id)}
+              // onClick={() => handleUpdateToy(_id)}
               className="btn btn-ghost btn-xs md:btn-sm btn-info"
             >
               <FaEdit size={20} />
