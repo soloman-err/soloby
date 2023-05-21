@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { FaLine, FaMinus, FaRulerHorizontal } from "react-icons/fa";
+import { FaWheelchair } from "react-icons/fa";
 
 const AddAToy = () => {
   const { user } = useContext(AuthContext);
@@ -58,7 +58,7 @@ const AddAToy = () => {
           <div className="flex justify-center items-baseline">
             <span className="text-2xl animate-pulse"> _</span>
             <h1 className="text-center font-bold text-3xl underline-offset-4">
-              Add your product
+              Add your vehicle
             </h1>
           </div>
           <div className="flex flex-col md:flex-row gap-5 mt-10">

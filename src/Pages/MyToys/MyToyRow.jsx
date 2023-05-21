@@ -1,9 +1,8 @@
 import React from "react";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
-import { Link } from "react-router-dom";
 
-const MyToyRow = ({ toy }) => {
+const MyToyRow = ({ toy, handleDeleteToy }) => {
   const {
     _id,
     photoURL,
@@ -48,7 +47,12 @@ const MyToyRow = ({ toy }) => {
       <td>{quantity}</td>
       <th className="space-x-2">
         <button className="btn btn-sm btn-info">Update</button>
-        <button className="btn btn-sm btn-error">Delete</button>
+        <button
+          onClick={() => handleDeleteToy(_id)}
+          className="btn btn-sm btn-error"
+        >
+          Delete
+        </button>
       </th>
     </tr>
   );

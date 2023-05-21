@@ -17,8 +17,25 @@ const MyToys = () => {
       });
   }, [url]);
 
+  // Delete a toy:
+  const handleDeleteToy = (id) => {
+    const proceed = confirm("Are you sure you want to delete?");
+    if (proceed) {
+      fetch(`http://localhost:2000/myToys/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          const remaining = toys.filter((toy) => toy._id !== id);
+          setToys(remaining);
+          alert("Deleted successfully!");
+        });
+    }
+  };
+
   return (
-    <div>
+    <div className="mb-auto">
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           {/* head */}
@@ -33,7 +50,11 @@ const MyToys = () => {
           <tbody>
             {/* row 1 */}
             {toys.map((toy) => (
-              <MyToyRow key={toy._id} toy={toy} />
+              <MyToyRow
+                key={toy._id}
+                toy={toy}
+                handleDeleteToy={handleDeleteToy}
+              />
             ))}
           </tbody>
         </table>
