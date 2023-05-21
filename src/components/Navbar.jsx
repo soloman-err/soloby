@@ -120,18 +120,18 @@ const Navbar = () => {
       <div className="space-x-2 hidden md:static md:flex">
         {user ? (
           <div className="flex items-center gap-2">
-            <img className="w-10 h-10 rounded-lg" src={user.photoURL} alt="" />
-            <button onClick={handleLogout} className="btn">
+            <img className="w-8 h-8 rounded-lg" src={user.photoURL} alt="" />
+            <button onClick={handleLogout} className="btn btn-sm">
               Logout
             </button>
           </div>
         ) : (
           <>
             <Link to="/login">
-              <button className="btn">login</button>
+              <button className="btn btn-sm">login</button>
             </Link>
             <Link to="/register">
-              <button className="btn">Register</button>
+              <button className="btn btn-sm">Register</button>
             </Link>
           </>
         )}

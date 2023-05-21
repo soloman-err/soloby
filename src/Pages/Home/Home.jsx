@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <div className="">
       {/* Banner */}
-      <header className="w-[90%] md:w-[80%] mx-auto mt-10">
+      <header className="w-[90%] md:w-[80%] mx-auto md:mt-10">
         <Carousel></Carousel>
       </header>
 
