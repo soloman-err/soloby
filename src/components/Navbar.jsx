@@ -120,7 +120,15 @@ const Navbar = () => {
       <div className="space-x-2 hidden md:static md:flex">
         {user ? (
           <div className="flex items-center gap-2">
-            <img className="w-8 h-8 rounded-lg" src={user.photoURL} alt="" />
+            <img
+              className="w-8 h-8 rounded border border-slate-400"
+              src={
+                user.photoURL ||
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_3BNZw4G45qsnyRTopol8ESLnkfejmN_WcA&usqp=CAU"
+              }
+              alt="Users-profile-image"
+              title={(user && user.displayName) || user.email}
+            />
             <button onClick={handleLogout} className="btn btn-sm">
               Logout
             </button>

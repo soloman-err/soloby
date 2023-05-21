@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Form, Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const [error, setError] = useState("");
@@ -10,20 +11,63 @@ const Register = () => {
   const handleCreateUser = async (event) => {
     event.preventDefault();
     const form = event.target;
-    const username = form.username.value;
+    const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
     const photoUrl = form.photoURL.value;
-    console.log(username, email, password, photoUrl);
+    console.log(name, email, password, photoUrl);
+
+    // try {
+    //   await createUser(email, password).then((result) => {
+    //     const user = result.user;
+    //     console.log(user);
+    //     Swal.fire("Account Created!", "Welcome to soloby!", "success");
+    //   });
+    // } catch (err) {
+    //   console.log(err);
+    //   setError(err.message);
+    //   try {
+    //     // Firebase authentication code that throws the error
+    //   } catch (error) {
+    //     let errorMessage;
+
+    //     if (error.code === "auth/email-already-in-use") {
+    //       errorMessage = error.message.split("/")[1].trim();
+    //     } else {
+    //       errorMessage = error.message;
+    //     }
+
+    //     Swal.fire({
+    //       title: errorMessage,
+    //       icon: "error",
+    //       confirmButtonText: "Okay",
+    //     });
+    //   }
+    // }
 
     try {
       await createUser(email, password).then((result) => {
         const user = result.user;
         console.log(user);
+        Swal.fire("Account Created!", "Welcome to soloby!", "success");
       });
     } catch (err) {
       console.log(err);
       setError(err.message);
+
+      let errorMessage;
+
+      if (err.code === "auth/email-already-in-use") {
+        errorMessage = err.message.split("/")[1].trim().slice(0, -2);
+      } else {
+        errorMessage = err.message;
+      }
+
+      Swal.fire({
+        title: errorMessage,
+        icon: "error",
+        confirmButtonText: "Okay",
+      });
     }
   };
   return (
@@ -38,8 +82,8 @@ const Register = () => {
               </label>
               <input
                 type="text"
-                name="username"
-                placeholder="username"
+                name="name"
+                placeholder="name"
                 className="input input-bordered"
                 required
               />
