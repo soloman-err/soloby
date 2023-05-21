@@ -4,10 +4,10 @@ import SearchBar from "./SearchBar";
 
 const AllToys = () => {
   return (
-    <>
+    <div className="mb-auto">
       <SearchBar />
       <ToyTable />
-    </>
+    </div>
   );
 };
 

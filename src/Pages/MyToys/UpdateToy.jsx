@@ -1,13 +1,27 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { FaWheelchair } from "react-icons/fa";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const AddAToy = () => {
+const UpdateToy = () => {
   const { user } = useContext(AuthContext);
-  // console.log(user);
+  const toy = useLoaderData();
+  const {
+    _id,
+    photoURL,
+    quantity,
+    productsTitle,
+    name,
+    email,
+    price,
+    rating,
+    subCategory,
+    desc,
+  } = toy;
+  console.log(toy);
 
-  const handleAddToy = (event) => {
+  // Update a toy:
+  const handleUpdateToy = (event, id) => {
     event.preventDefault();
     const form = event.target;
     const photoURL = form.photoURL.value;
@@ -20,7 +34,7 @@ const AddAToy = () => {
     const quantity = form.quantity.value;
     const desc = form.desc.value;
 
-    const newToy = {
+    const updatedToy = {
       photoURL,
       productsTitle,
       price,
@@ -30,36 +44,46 @@ const AddAToy = () => {
       subCategory,
       quantity,
       desc,
+      _id,
     };
+    console.log(id);
 
-    fetch("http://localhost:2000/addAToy", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newToy),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
-          form.reset();
-        }
-      });
-    Swal.fire("Added successfully!", "You'vé a new vehicle!", "success");
+    Swal.fire({
+      title: "Are you sure to update?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Update it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:2000/toyDetails/${_id}`, {
+          method: "PUT",
+          header: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(updatedToy),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+          });
+        Swal.fire("Updated!", "You'vé updated successfully!", "success");
+      }
+    });
   };
 
   return (
     <div className="hero">
       <div className="hero-content">
         <form
-          onSubmit={handleAddToy}
+          onSubmit={handleUpdateToy}
           className="w-full card-body rounded shadow-xl"
         >
           <div className="flex justify-center items-baseline">
             <span className="text-2xl animate-pulse"> _</span>
             <h1 className="text-center font-bold text-3xl underline-offset-4">
-              Add your vehicle
+              Update your vehicle
             </h1>
           </div>
           <div className="flex flex-col md:flex-row gap-5 mt-10">
@@ -73,6 +97,7 @@ const AddAToy = () => {
                 <input
                   type="text"
                   name="photoURL"
+                  defaultValue={photoURL}
                   placeholder="photoURL"
                   className="input input-bordered"
                   required
@@ -85,6 +110,7 @@ const AddAToy = () => {
                 <input
                   type="text"
                   name="productsTitle"
+                  defaultValue={productsTitle}
                   placeholder="Products Title"
                   className="input input-bordered"
                   required
@@ -99,6 +125,7 @@ const AddAToy = () => {
                 <input
                   type="text"
                   name="price"
+                  defaultValue={price}
                   placeholder="$ 00.00"
                   className="input input-bordered"
                   required
@@ -143,6 +170,7 @@ const AddAToy = () => {
                   type="text"
                   name="rating"
                   placeholder="Rating"
+                  defaultValue={rating}
                   className="input input-bordered"
                   required
                 />
@@ -152,7 +180,7 @@ const AddAToy = () => {
           {/* Row 3 */}
           <div
             className="flex flex-col-reverse
-           md:flex-row justify-between"
+             md:flex-row justify-between"
           >
             {/* Sub-category */}
             <div className="md:w-[48%]">
@@ -163,6 +191,7 @@ const AddAToy = () => {
                 className="form-control w-full py-3 px-5 border-2 border-slate-300 rounded-lg bg-transparent"
                 name="subCategory"
                 id="subCategory"
+                defaultValue={subCategory}
                 required
               >
                 <option value="">Select an option</option>
@@ -182,13 +211,14 @@ const AddAToy = () => {
             </div>
 
             {/* Quantity */}
-            <div className="form-contro">
+            <div className="form-control">
               <label className="label">
                 <span className="label-text">Available quantity</span>
               </label>
               <input
                 type="number"
                 name="quantity"
+                defaultValue={quantity}
                 placeholder="Available quantity"
                 className="input input-bordered"
                 required
@@ -203,15 +233,14 @@ const AddAToy = () => {
             <textarea
               type="text"
               name="desc"
+              defaultValue={desc}
               className="input input-bordered py-1"
               placeholder="Write Description"
               required
             ></textarea>
           </div>
           <div className="form-control mt-6">
-            <button type="submit" className="btn btn-primary">
-              Publish
-            </button>
+            <button className="btn btn-primary">Update Now</button>
           </div>
         </form>
       </div>
@@ -219,4 +248,4 @@ const AddAToy = () => {
   );
 };
 
-export default AddAToy;
+export default UpdateToy;

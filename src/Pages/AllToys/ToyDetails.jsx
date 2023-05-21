@@ -5,7 +5,7 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 
 const ToyDetails = () => {
   const toy = useLoaderData();
-  console.log(toy);
+  // console.log(toy);
   const {
     photoURL,
     productsTitle,
@@ -19,7 +19,7 @@ const ToyDetails = () => {
   } = toy;
 
   return (
-    <div className="flex flex-col md:flex-row h-80 rounded-xl w-[70%] mx-auto bg-base-100 shadow-xl">
+    <div className="flex flex-col md:flex-row h-80 rounded-xl w-[80%] mx-auto bg-base-100 shadow-xl">
       <figure>
         <img
           className="h-full w-96 object-cover rounded-xl shadow-xl"
@@ -70,7 +70,7 @@ const ToyDetails = () => {
         <div className="text-sm mt-2">
           <p className="text-sm font-bold underline">Product Description:</p>
 
-          <p className="opacity-95">{desc}</p>
+          <p className="opacity-95">{desc && desc.slice(0, 50)}</p>
         </div>
       </div>
     </div>
