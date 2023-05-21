@@ -14,10 +14,16 @@ const Blog = () => {
             What is expressJS? and What is NextJS?
           </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius
-            mollitia ratione dignissimos? Facere repellat magnam eum voluptates,
-            id aspernatur unde velit tempora similique reiciendis odio deleniti
-            numquam. Odio, eveniet accusantium?
+            <span className="underline underline-offset-4">ExpressJS:</span>
+            <br />
+            Is a versatile web app framework of NodeJS. Mainly, It handles &
+            simplifies the process of HTTP requests.
+          </p>
+          <p>
+            <span className="underline underline-offset-4">NextJS:</span>
+            <br />
+            NextJS is a React frameworks that provides server-side rendering
+            functionality & enhanced their processing.
           </p>
         </article>
 
@@ -27,10 +33,10 @@ const Blog = () => {
             What is mongoDB aggregate & how does it works?
           </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius
-            mollitia ratione dignissimos? Facere repellat magnam eum voluptates,
-            id aspernatur unde velit tempora similique reiciendis odio deleniti
-            numquam. Odio, eveniet accusantium?
+            MongoDB's aggregate functionality allows us to execute
+            advance/complex data analysis to multiple stages. Also, gives us the
+            ability to extract insights & generate reports for flexible data
+            manipulation capabilities.
           </p>
         </article>
 
@@ -41,10 +47,20 @@ const Blog = () => {
             should we store them on the client-side?
           </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius
-            mollitia ratione dignissimos? Facere repellat magnam eum voluptates,
-            id aspernatur unde velit tempora similique reiciendis odio deleniti
-            numquam. Odio, eveniet accusantium?
+            <span className="underline underline-offset-4">Access Token:</span>
+            <br />
+            An access token is used to authenticate a user. It is used to grant
+            user access to protected resources. It contains user identity
+            information & permissions. It requires re-authentication if once
+            expired.
+          </p>
+          <p>
+            <span className="underline underline-offset-4">Refresh Token:</span>
+            <br />
+            An access token is used to authenticate a user. It is used to grant
+            user access to protected resources. It contains user identity
+            information & permissions. It requires re-authentication if once
+            expired.
           </p>
         </article>
 
