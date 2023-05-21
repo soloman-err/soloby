@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:2000/cars"),
+        loader: () => fetch("https://soloby.vercel.app/cars"),
       },
       {
         path: "allToys",
@@ -35,18 +35,18 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:2000/toyDetails/${params.id}`),
+          fetch(`https://soloby.vercel.app/toyDetails/${params.id}`),
       },
       {
         path: "myToys",
         element: <MyToys></MyToys>,
-        // loader: () => fetch(`http://localhost:2000/myToys?email=${user.email}`),
+        // loader: () => fetch(`https://soloby.vercel.app/myToys?email=${user.email}`),
       },
       {
         path: "updateToy/:id",
         element: <UpdateToy></UpdateToy>,
         loader: ({ params }) =>
-          fetch(`http://localhost:2000/toyDetails/${params.id}`),
+          fetch(`https://soloby.vercel.app/toyDetails/${params.id}`),
       },
       {
         path: "addAToy",

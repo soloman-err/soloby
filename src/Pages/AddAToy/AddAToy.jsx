@@ -32,7 +32,7 @@ const AddAToy = () => {
       desc,
     };
 
-    fetch("http://localhost:2000/addAToy", {
+    fetch("https://soloby.vercel.app/addAToy", {
       method: "POST",
       headers: {
         "content-type": "application/json",

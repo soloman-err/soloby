@@ -6,7 +6,7 @@ const ToyTable = () => {
 
   useEffect(() => {
     try {
-      fetch("http://localhost:2000/cars")
+      fetch("https://soloby.vercel.app/cars")
         .then((res) => res.json())
         .then((data) => {
           setAllToys(data);

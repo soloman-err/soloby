@@ -23,13 +23,13 @@ const Navbar = () => {
   return (
     <nav className="flex flex-row-reverse md:flex-row items-center justify-between md:items-center p-3">
       <Link to="/">
-        <h1 className="custom-title text-3xl font-bold">soloby</h1>
+        <h1 className="custom-title text-4xl font-bold">soloby</h1>
       </Link>
       <ul className="hidden md:flex flex-col md:flex-row font-bold md:space-x-10 uppercase divide-black">
         <li
           className={
             location.pathname === "/allToys"
-              ? "underline underline-offset-4"
+              ? "border-b-4 border-slate-900"
               : ""
           }
         >
@@ -40,7 +40,7 @@ const Navbar = () => {
             <li
               className={
                 location.pathname === "/myToys"
-                  ? "underline underline-offset-4"
+                  ? "border-b-4 border-slate-900"
                   : ""
               }
             >
@@ -49,7 +49,7 @@ const Navbar = () => {
             <li
               className={
                 location.pathname === "/addAToy"
-                  ? "underline underline-offset-4"
+                  ? "border-b-4 border-slate-900"
                   : ""
               }
             >
@@ -59,7 +59,7 @@ const Navbar = () => {
         )}
         <li
           className={
-            location.pathname === "/blog" ? "underline underline-offset-4" : ""
+            location.pathname === "/blog" ? "border-b-4 border-slate-900" : ""
           }
         >
           <a href="/blog">Blog</a>
@@ -71,7 +71,7 @@ const Navbar = () => {
       </div>
       {isOpen && (
         <aside
-          className={`bg-gray-200 fixed top-12 p-2 left-0 h-full w-56 transition-transform duration-500 ease-in-out z-50 flex`}
+          className={`bg-gray-200 fixed top-12 p-2 left-0 h-full w-56 transition-transform duration-500 ease-in-out z-50 flex flex-col space-y-2`}
         >
           <ul className="flex flex-col font-bold md:space-x-0 space-y-1 uppercase">
             <li>
@@ -91,6 +91,29 @@ const Navbar = () => {
               <a href="/blog">Blog</a>
             </li>
           </ul>
+          <div className="space-x-2">
+            {user ? (
+              <div className="flex flex-col items-start gap-2">
+                <img
+                  className="w-10 h-10 rounded-lg"
+                  src={user.photoURL}
+                  alt=""
+                />
+                <button onClick={handleLogout} className="btn btn-sm">
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <div className="flex flex-col space-y-2">
+                <Link to="/login">
+                  <button className="btn btn-sm">login</button>
+                </Link>
+                <Link to="/register">
+                  <button className="btn btn-sm">Register</button>
+                </Link>
+              </div>
+            )}
+          </div>
         </aside>
       )}
 

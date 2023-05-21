@@ -57,7 +57,7 @@ const UpdateToy = () => {
       confirmButtonText: "Yes, Update it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:2000/toyDetails/${_id}`, {
+        fetch(`https://soloby.vercel.app/toyDetails/${_id}`, {
           method: "PUT",
           header: {
             "content-type": "application/json",

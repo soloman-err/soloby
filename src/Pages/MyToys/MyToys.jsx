@@ -7,7 +7,7 @@ const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
 
-  const url = `http://localhost:2000/myToys?email=${user?.email}`;
+  const url = `https://soloby.vercel.app/myToys?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url)
@@ -20,7 +20,7 @@ const MyToys = () => {
   // Update a toy:
   // const handleUpdateToy = (id) => {
   //   console.log(id);
-  //   fetch(`http://localhost:2000/toyDetails/${id}`, {
+  //   fetch(`https://soloby.vercel.app/toyDetails/${id}`, {
   //     method: "PATCH",
   //     header: {
   //       "content-type": "application/json",
@@ -45,7 +45,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:2000/myToys/${id}`, {
+        fetch(`https://soloby.vercel.app/myToys/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
